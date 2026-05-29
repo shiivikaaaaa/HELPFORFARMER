@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpForFarmer - Crop Information</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ask-AI.css') }}">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- AI Content -->
+  <section class="page">
+    <div class="hero-section">
+      <h1>Crop & Plant Information Assistant</h1>
+      <p class="hero-description">Get expert advice on planting, growing, and harvesting any crop. Our AI-powered assistant provides detailed information tailored to your farming needs.</p>
+    </div>
+    
+    <div class="ai-container">
+      <div class="search-container">
+        <form id="crop-search-form">
+          <div class="input-group">
+            <div class="search-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <input type="text" id="crop-name" placeholder="Enter crop or plant name (e.g., Tomato, Rice, Wheat)" required>
+            <button type="submit" id="search-btn">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+        </form>
+        <div class="popular-searches">
+          <p>Popular searches:</p>
+          <div class="tag-container">
+            <span class="tag" data-crop="Tomato">Tomato</span>
+            <span class="tag" data-crop="Rice">Rice</span>
+            <span class="tag" data-crop="Wheat">Wheat</span>
+            <span class="tag" data-crop="Corn">Corn</span>
+            <span class="tag" data-crop="Potato">Potato</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="loading-container" id="loading-container">
+        <div class="spinner"></div>
+        <p>Fetching crop information...</p>
+      </div>
+      
+      <div class="result-container" id="result-container">
+        <div class="result-header">
+          <h2 id="result-title">Crop Information</h2>
+          <button id="print-btn" class="action-btn">
+            <i class="fas fa-print"></i> Print
+          </button>
+        </div>
+        <div class="result-content" id="result-content">
+          <!-- Results will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+  <script src="{{ url_for('static', filename='js/ask-AI.js') }}"></script>
+</body>
+</html>

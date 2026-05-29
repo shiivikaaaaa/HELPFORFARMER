@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpForFarmer - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  
+  <section class="page-home">
+    <h1>Welcome to HelpForFarmer</h1>
+    <p1>Your one-stop solution for farming assistance.</p>
+  </section>
+
+  <section class="card-container">
+    <div class="card" onclick="window.location.href='/tools'">
+        <img src="{{ url_for('static', filename='images/drone.jpg') }}" alt="New Farming Tools">
+        <h3>New Farming Tools</h3>
+        <p>Explore modern agricultural tools to improve efficiency.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='/disease'">
+        <img src="{{ url_for('static', filename='images/Keep_Garden-Header.jpg') }}" alt="AI Plant Disease Detection">
+        <h3>AI Disease Detection</h3>
+        <p>Detect plant diseases early using AI-based solutions.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='/storage'">
+        <img src="{{ url_for('static', filename='images/NE-Cold-Storage-Rendering.jpg') }}" alt="Cold Storage Locator">
+        <h3>Cold Storage Locator</h3>
+        <p>Find the nearest cold storage facilities for your produce.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='/weather'">
+        <img src="{{ url_for('static', filename='images/cloud-weather-with-sun-and-rain-vector-17952012.jpg') }}" alt="Weather Forecast">
+        <h3>Weather Forecast</h3>
+        <p>Get real-time weather updates to plan farming activities.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='/ask-AI'">
+        <img src="{{ url_for('static', filename='images/close-up.jpg') }}" alt="Ask From AI">
+        <h3>Ask From AI</h3>
+        <p>Know detailed information about any plant or crop using AI.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='/about'">
+      <img src="{{ url_for('static', filename='images/about.png') }}" alt="About Us">
+      <h3>About </h3>
+      <p>Learn more about our mission, team, and how we help farmers through technology.</p>
+    </div>
+  
+</section>
+
+  <div id="footer-placeholder"></div>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

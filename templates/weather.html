@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpForFarmer - Weather</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/weather.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Weather Content -->
+  <div class="container">
+    <header>
+        <h1 class="name">Weather Dashboard</h1>
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="locationBtn" title="Get weather for my location">
+                <i class="fas fa-map-marker-alt"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="error-container" id="errorContainer">
+        <p>City not found. Please try again.</p>
+    </div>
+
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <main>
+        <section class="current-weather" id="currentWeather">
+            <h2>Current Weather</h2>
+            <div class="weather-info">
+                <div class="city-info">
+                    <h3 id="cityName"></h3>
+                    <p id="currentDate"></p>
+                </div>
+                <div class="weather-details">
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                    <div class="temperature-container">
+                        <div class="temperature">
+                            <span id="temperature"></span>
+                            <span class="unit">°C</span>
+                        </div>
+                        <div class="feels-like">
+                            Feels like: <span id="feelsLike"></span>°C
+                        </div>
+                    </div>
+                    <p id="weatherDescription"></p>
+                </div>
+                <div class="additional-info">
+                    <p>Humidity: <span id="humidity"></span>%</p>
+                    <p>Wind Speed: <span id="windSpeed"></span> m/s</p>
+                    <p>Air Quality: <span id="airQuality"></span></p>
+                    <div class="sun-times">
+                        <p>Sunrise: <span id="sunrise"></span></p>
+                        <p>Sunset: <span id="sunset"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="today-forecast" id="todayForecast">
+            <h2>Today's 3-Hour Forecast</h2>
+            <div class="hourly-forecast-container"></div>
+        </section>
+
+        <section class="forecast" id="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-container"></div>
+        </section>
+
+        <section class="detailed-forecast" id="detailedForecast">
+            <h2>Detailed 3-Hour Forecast</h2>
+            <div class="detailed-forecast-container"></div>
+        </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+</body>
+</html>
