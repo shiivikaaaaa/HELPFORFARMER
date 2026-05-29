@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Acres Farm - About Us</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rooted in Nature, Growing for the Future</h1>
+      <p>Sustainable farming practices that nourish our community and protect our planet</p>
+      <a href="#about-section" class="cta-button">Learn Our Story</a>
+    </div>
+  </section>
+
+  <section id="about-section" class="about-section">
+    <div class="container">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Farmer working in the field">
+      </div>
+      <div class="about-content">
+        <h2>Our Story</h2>
+        <p>Founded in 2025, Green Acres Farm began with a simple mission: to grow organic produce while preserving the land for future generations. What started as a small family operation has grown into a community hub where sustainable farming meets education and connection.</p>
+        
+        <div class="values">
+          <h3>Our Values</h3>
+          <div class="value-item">
+            <h4>Sustainability</h4>
+            <p>We implement regenerative farming practices that improve soil health, conserve water, and reduce our carbon footprint.</p>
+          </div>
+          <div class="value-item">
+            <h4>Organic Farming</h4>
+            <p>We grow without synthetic pesticides or fertilizers, ensuring our produce is as natural and nutritious as possible.</p>
+          </div>
+          <div class="value-item">
+            <h4>Community Involvement</h4>
+            <p>We believe in the power of community. Through farm tours, workshops, and volunteer programs, we connect people with the land.</p>
+          </div>
+        </div>
+        
+        <div class="quote">
+          <blockquote>
+            "The best fertilizer is the farmer's shadow. We work with nature, not against it, to create abundance for our community."
+          </blockquote>
+          <cite>- Satya Prakash Shrivastava, Founder</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        
+        <div class="team-card">
+          <div class="team-image">
+            <img src="../static/images/satya.jpg" alt="Satya Prakash">
+          </div>
+          <h3>Satya Prakash <br> Shrivastava</h3>
+          <p class="role">Founder & AIML / Server / Backend Developer</p>
+          <p class="bio">Satya leads the AI/ML model development, server-side logic, and backend systems for HelpForFarmer, delivering smart and scalable solutions for modern agriculture.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-image">
+            <img src="../static/images/krishna2.jpg" alt="Krishna Pal">
+          </div>
+          <h3>Krishna Pal</h3>
+          <p class="role">Co-Founder & Database Manager / Site Debugger</p>
+          <p class="bio">Krishna, as a co-founder, manages and organizes our database systems and helps in debugging the website to ensure everything runs smoothly.</p>
+        </div>
+        
+        <div class="team-card">
+          <div class="team-image">
+            <img src="../static/images/harshit.jpg" alt="Harshit Sharma">
+          </div>
+          <h3>Harshit Sharma</h3>
+          <p class="role">Frontend Developer</p>
+          <p class="bio">Harshit crafts intuitive and user-friendly interfaces that help farmers easily navigate and use the tools available on our platform.</p>
+        </div>
+  
+        <div class="team-card">
+          <div class="team-image">
+            <img src="../static/images/shivika.jpg" alt="Shivika Kulshrestha">
+          </div>
+          <h3>Shivika Kulshrestha</h3>
+          <p class="role">Information Gatherer & Review Analyst</p>
+          <p class="bio">Shivika focuses on gathering useful information and collecting reviews from customers and clients to help improve and align our services with user needs.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  
+  <div id="footer-placeholder"></div>
+  
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+nav {
+  /* background-color: #38af3c;  */
+  /* background: linear-gradient(to right, #5fff72, #8afe7b, #1eff00); */
+  /* background: linear-gradient(to bottom, #38af3c, #88c057, #c2e59c); */
+  /* background: linear-gradient(to bottom, #39b93d, #299b31, #23852b);  */
+  /* background: linear-gradient(to bottom, #38af3c, #2d9949, #207f4f, #146653); */
+  /* background: linear-gradient(to bottom, #38af3c, #2a8a30); */
+  
+  background: linear-gradient(to bottom, #3abd3f, #0d8711);
+  /* background: linear-gradient(to bottom, #3fd344, #1a9422); */
+  
+
+
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 2rem; 
+  flex-shrink: 0;
+}
+
+/* Account Container and Dropdown Styles */
+.account-container {
+    position: relative;
+    display: inline-block;
+}
+
+.AC {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: -1rem;
+    color: white;
+    /* background-color: #2d8a30; */
+    background: linear-gradient(to bottom, #0d8711, #3abd3f);
+    padding: 8px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.AC:hover {
+    /* background-color: #ffffff; */
+    background: linear-gradient(to bottom, #ffffff);
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border-color: #2d8a30;
+}
+
+.AC:active {
+    background-color: #1f5f21;
+    color: white;
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.account-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    min-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.account-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-info {
+    margin-bottom: 25px;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.user-email {
+    font-size: 18px;
+    color: #666;
+}
+
+.logout-button {
+    width: 60%;
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+/* .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; 
+  margin: 0;
+  padding: 0;
+} */
+
+/* GPT */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.button-nav {
+  background-color: transparent; 
+  border: none;
+  color: #000000;
+  padding: 8px 15px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.button-nav:hover {
+  background-color: #2d8a30; 
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.button-nav:active,
+.button-nav.active {
+  background-color: #1f5f21;
+  color: white;
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+/* Button click animation */
+.button-clicked {
+  background-color: #1f5f21 !important;
+  color: white !important;
+  transform: scale(0.95) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
+}
+
+.page-home{
+  padding: 6rem 2rem 12rem;
+  background-color: #fff;
+  background-image: url('../images/field2.jpg'); 
+  background-size: cover;
+  margin: 6rem 5rem 1rem 5rem;
+  border-radius: 13px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+  display: grid;
+  font-family: Arial, sans-serif;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 15px 10px;
+  color: #333;
+}
+
+.card p {
+  margin: 0 15px 15px;
+  color: #666;
+  flex-grow: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card hover effect */
+.card-hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+/* Card click animation */
+.card-clicked {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.3rem;
+  }
+  
+  .button-nav {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .AC {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
